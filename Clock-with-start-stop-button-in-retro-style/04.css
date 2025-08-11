@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", system-ui;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+body{
+  background-color: lightslategray;
+}
+
+.center{
+  height: 100vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#banner{
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+#clock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  background-color: whitesmoke;
+  width: 24%;
+  height: 8%;
+  border-radius: 1.5rem;
+}
+.start-stop-container{
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem ;
+}
+#start{
+  cursor: pointer;
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+#stop{
+  cursor: pointer;
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

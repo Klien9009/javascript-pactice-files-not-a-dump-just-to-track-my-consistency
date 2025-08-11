@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: cyan;
+  text-align: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  column-gap: 1rem;
+}
+.button{
+  border:1px solid rgb(107, 107, 107);
+  margin-top: 4%;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0.7rem;
+  padding: 0.5em;
+  color: white;
+}
+
+#Light{
+ background-color: rgb(255, 255, 255);
+ color: black;
+}
+#Dark{
+ background-color: rgb(17, 17, 17);
+}
+#LightGreen{
+ background-color: lightgreen;
+}
+#LightPink{
+ background-color: lightpink;
+}
+#LightYellow{
+ background-color: lightyellow;
+ color: black;
+}
+#LightLateGrey{
+ background-color: lightslategrey;
+}

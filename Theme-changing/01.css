@@ -1,0 +1,43 @@
+*{
+ margin: 0;
+ padding: 0;
+}
+
+body{
+  text-align: center;
+}
+
+.container{
+  width: auto;
+  height: 10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  background-color: rgb(0, 255, 255);
+}
+
+#dark{
+  padding: 0.3em;
+  background-color: rgb(14, 14, 14);
+  color: white;
+  border-radius: 0.3rem;
+}
+#light{
+  padding: 0.3em;
+  background-color: rgb(255, 255, 255);
+  color: rgb(2, 2, 2);
+  border-radius: 0.3rem;
+}
+#light-green{
+  padding: 0.3em;
+  background-color: lightgreen;
+  color: white;
+  border-radius: 0.3rem;
+}
+#light-pink{
+  padding: 0.3em;
+  background-color: lightpink;
+  color: white;
+  border-radius: 0.3rem;
+}

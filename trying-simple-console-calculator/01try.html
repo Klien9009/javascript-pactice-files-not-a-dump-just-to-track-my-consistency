@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>01 trying calc</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      text-align: center;
+    }
+    .container{
+      margin-top: 1rem;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      border: 0.1rem solid red;
+      width:350px;
+      height: 350px;
+      display: grid;
+      grid-template-columns:1fr 1fr 1fr 1fr;
+      grid-template-rows:1fr 1fr 1fr 1fr ;
+    }
+    button{
+      background-color: gray;
+      color: white;
+      font-size: x-large;
+      font-weight: bolder;
+    }
+    #clear-button{
+      margin-top:1rem ;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <div class="container">
+    <button onclick="
+      calcu += `1`;
+      console.log(calcu);
+      ">1</button>
+
+    <button onclick="
+      calcu += `2`;
+      console.log(calcu);
+      ">2</button>
+
+    <button onclick="
+      calcu += `3`;
+      console.log(calcu);
+      ">3</button>
+
+    <button onclick="
+      calcu += `+`;
+      console.log(calcu);
+      ">+</button>
+
+    <button onclick="
+      calcu += `4`;
+      console.log(calcu);
+      ">4</button>
+
+    <button onclick="
+      calcu += `5`;
+      console.log(calcu);
+      ">5</button>
+
+    <button onclick="
+      calcu += `6`;
+      console.log(calcu);
+      ">6</button>
+
+     <button onclick="
+      calcu += `-`;
+      console.log(calcu);
+      ">-</button>
+
+    <button onclick="
+      calcu += `7`;
+      console.log(calcu);
+      ">7</button>
+
+    <button onclick="
+      calcu += `8`;
+      console.log(calcu);
+      ">8</button>
+
+    <button onclick="
+      calcu += `9`;
+      console.log(calcu);
+      ">9</button>
+      
+    <button onclick="
+      calcu += `*`;
+      console.log(calcu);
+      ">*</button>
+
+    <button onclick="
+      calcu += `.`;
+      console.log(calcu);
+      ">.</button>
+
+    <button onclick="
+      calcu += `0`;
+      console.log(calcu);
+      ">0</button>
+
+    <button onclick="
+      calcu += `/`;
+      console.log(calcu);
+      ">/</button>
+
+    <button onclick="
+    calcu = eval(calcu);
+    console.log(calcu);
+      ">=</button>
+  </div>
+
+  <button id="clear-button" onclick="
+    calcu = '';  
+    console.log('Cleared');
+  ">Clear</button>
+
+
+  <script>
+    let calcu = ``;
+  </script>
+</body>
+</html>
