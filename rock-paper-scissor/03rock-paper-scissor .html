@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>02-Rock-Paper-Scissors</title>
+  <title>03-Rock-Paper-Scissors</title>
 </head>
 <body>
   <p>Rock Paper Scissors</p>
@@ -10,14 +10,43 @@
   <button onclick="playGame('paper');">Paper</button>
 
   <button onclick="playGame('scissors');">Scissors</button>
+
+  <button onclick="resetButton();">Reset score</button>
+
   <script>
+    function resetButton() {
+      score.losses = 0;
+      score.wins = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      alert('Score was reset.');
+    };
+
+    let score = JSON.parse(localStorage.getItem('score')) || { //using default operator(||)
+      wins: 0,
+      losses:0,
+      ties: 0
+      
+    };
+
+    
+/*
+    if (!score) { //!score does the same thing as checking that its null.!score will flip it into null.
+      score = {
+        wins: 0, // but we use default operator up to simplify code
+        losses:0,
+        ties: 0
+      };
+    }
+*/
+
     function playGame(playerMove){
       const computerMove = pickComputerMove();
         let result ='';
 
         if (playerMove === 'scissors'){
           if(computerMove === 'rock'){
-            result = 'You Lose.';
+            result = 'You lose.';
           }else if (computerMove === 'paper'){
             result = 'You win.';
           }else if (computerMove === 'scissors'){
@@ -44,8 +73,20 @@
           }
         }
 
+        if (result === 'You win.') {
+          score.wins++;
+        }else if (result === 'You lose.') {
+          score.losses++;
+        }else if ( result === 'Tie.') {
+          score.ties++;
+        }
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        localStorage.setItem('score', JSON.stringify(score));
+        console.log(`${result}`)
+        console.log(JSON.stringify(score));
+
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+wins: ${score.wins}, losses: ${score.losses},Ties: ${score.ties} `);
     };
 
     function pickComputerMove (){
@@ -60,9 +101,12 @@
       }else if(randomNumber < 1 && randomNumber >= 2/3){
         computerMove = 'scissors';
       };
+       console.log(`${computerMove}`)
 
       return computerMove;
     };
+
+   
   </script>
 </body>
 </html>

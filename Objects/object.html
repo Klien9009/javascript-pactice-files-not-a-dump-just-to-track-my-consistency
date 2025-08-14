@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Objects</title>
+</head>
+<body>
+
+  <script>
+    /*
+    const product = {
+      name: 'socks',
+      price: 1090
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+   product.name =  'cotton socks';
+    console.log(product);
+
+    product.newProperty = true;
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);
+    */
+
+
+
+/*
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': '1 day',
+      rating: {
+        stars: 4.5,
+        count:87
+      },//object inside an object with curlyBrackets.
+      fun: function function1(){
+        console.log('function inside object');
+      }//a function is another type of value, so we can write function into an object.Function inside an object called method.
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    //console.log(product.delivery-time);//javascript thinks that there's a minus sign so now we goona use square brackets[].
+
+    console.log(product2['delivery-time']);// we gonna use squareBracket and remove the dot.
+
+    console.log(product2.rating.count)
+
+    product2.fun();// we can call it as a function.
+
+
+    console.log(typeof console); // so the console is an object.
+    console.log(typeof console.log); // and log is an function, there is a function(log) inside object(console), and math.random is also a method math is an object and random is a function.
+
+
+    //2 more built in object
+    //1st. is JSON (javascript object notation), and has less features but can be understand with any programing language.
+    console.log(JSON.stringify(product2));//JAVASCRIPT TO JSON 
+    const jsonString =JSON.stringify(product2)
+    console.log (JSON.parse(jsonString));//JSON TO JAVASCRIPT 
+*/
+     
+
+//Auto-Boxing, javascript automatically wraps the string in an object like a box. It doesn't work with null and undefined. 
+console.log('hello'.length);
+console.log('hello'.toUpperCase());
+
+const object1 = {
+  messsege: 'hello'
+};
+const object2 = object1;
+
+
+object1.messsege = 'Good job!'
+console.log(object1);
+
+const object3 = {
+  messege: 'Good job!'
+};
+console.log(object3 === object1);
+console.log(object2 === object1);
+
+const object4 = {
+  messege: 'Good job!',
+  price: 799
+};
+//const messege = object4.messege;
+const {messege, price} = object4;
+console.log(messege);
+console.log(price);
+
+
+const object5 ={
+  //messege: messege
+  messege,
+  // method: function function1(){
+   // console.log('method');
+ // }
+  method(){
+    console.log('method'); //this is called shorthand method 
+  }
+}
+
+console.log(object5);
+object5.method();
+  </script>
+</body>
+</html>
