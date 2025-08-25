@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shipping cost calculator</title>
+</head>
+<body>
+  <h1>Amazon shipping cost calculator</h1>
+  <input class="js-product-cost" onkeydown="console.log(event.key);
+  if (event.key === 'Enter'){
+    calculateButton();
+  }" type="number" placeholder="Product cost"  >
+  <button onclick="calculateButton()">calculate</button>
+  <p class="js-shipping-cost"></p>
+  
+  <script>
+    function handleCostKeyDown(){
+      if (event.key === 'Enter'){
+        calculateButton();
+      }
+    }
+
+  function calculateButton(){
+  const productCost =document.querySelector('.js-product-cost') ;
+
+    let cost = Number(productCost.value);
+    if(cost < 40){
+      cost = cost + 10;
+    }
+
+document.querySelector('.js-shipping-cost').innerHTML = `$${cost}`;
+
+   }
+
+
+
+  </script>
+</body>
+</html>

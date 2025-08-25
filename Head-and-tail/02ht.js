@@ -1,5 +1,15 @@
 
 
+
+let score= JSON.parse(localStorage.getItem('score'))|| {
+Wins:0,
+Losses:0,
+Draw:0
+};
+
+console.log(score)
+
+
 function Aki(playerMove){
   const playerCharacter = computerMoves();
   let result = '';
@@ -7,13 +17,13 @@ function Aki(playerMove){
     if (playerCharacter === 'Aki'){
       result = 'Draw.';
     }else if(playerCharacter === 'Denji'){
-      result = 'You Lose.';
+      result = 'You lose.';
     }else if(playerCharacter === 'Power'){
       result = 'You win.';
     }else if(playerCharacter === 'Himeno'){
       result = 'You win.';
     }else if(playerCharacter === 'Makima'){
-      result = 'You Lose.';
+      result = 'You lose.';
     }
     console.log(result);
   }else if(playerMove === 'Denji'){
@@ -26,20 +36,20 @@ function Aki(playerMove){
     }else if(playerCharacter === 'Himeno'){
       result = 'You win.'
     }else if(playerCharacter === 'Makima'){
-      result = 'You Lose.'
+      result = 'You lose.'
     }
 
   }else if(playerMove === 'Power'){
     if (playerCharacter === 'Aki'){
       result = 'You lose.'
     }else if(playerCharacter === 'Denji'){
-      result = 'You Lose.'
+      result = 'You lose.'
     }else if(playerCharacter === 'Power'){
       result = 'Draw.'
     }else if(playerCharacter === 'Himeno'){
       result = 'You win.'
     }else if(playerCharacter === 'Makima'){
-      result = 'You Lose.'
+      result = 'You lose.'
     }
 
   }else if(playerMove === 'Himeno'){
@@ -52,7 +62,7 @@ function Aki(playerMove){
     }else if(playerCharacter === 'Himeno'){
       result = 'Draw.'
     }else if(playerCharacter === 'Makima'){
-      result = 'You Lose.'
+      result = 'You lose.'
     }
 
   }else if(playerMove === 'Makima'){
@@ -68,8 +78,21 @@ function Aki(playerMove){
       result = 'This character is illegal, pls choose another💀.'
     }
   }
+
+  if (result === 'You win.'){
+    score.Wins++
+  }else if (result === 'You lose.'){
+    score.Losses++
+  }else if (result === 'Draw.'){
+    score.Draw++
+  }
+
+   localStorage.setItem('score', JSON.stringify(score));
+   console.log(score)
+
   alert(`You Choose: ${playerMove} || Computer Choose: ${playerCharacter}, 
-Result: ${result}`)
+Result: ${result}, 
+Wins: ${score.Wins} , Losses: ${score.Losses} , Draw: ${score.Draw}`) 
 }
 
 
