@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <title>Shipping cost calculator</title>
+  <style>
+    .error {
+      color: rgb(177, 17, 17);
+    }
+  </style>
 </head>
 <body>
   <h1>Amazon shipping cost calculator</h1>
@@ -21,10 +26,15 @@
 
   function calculateButton(){
   const productCost =document.querySelector('.js-product-cost') ;
+  const shippingCost = document.querySelector('.js-shipping-cost');
 
     let cost = Number(productCost.value);
-    if(cost < 40){
+    if(cost < 40 && cost > 0){
       cost = cost + 10;
+      shippingCost.classList.remove('error')
+    }else if (cost <= 0){
+      cost= ` ${cost} is not valid`
+     shippingCost.classList.add('error')
     }
 
 document.querySelector('.js-shipping-cost').innerHTML = `$${cost}`;

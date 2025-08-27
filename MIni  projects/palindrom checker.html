@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>palindrom checker</title>
+</head>
+<body>
+  <h1>palindrom Checker</h1>
+  <input id="input" type="text" placeholder="type your word">
+  <button onclick="Check()">Check</button>
+
+  <script>
+    const input = document.getElementById('input')
+    function reverseString(str){
+      return str.split("").reverse().join("")
+     }
+    function Check(){
+      const value = input.value;
+      const reverse = reverseString(value)
+
+     /* if(value === ""){
+        alert('enter the value')
+      }*/
+      if(value != ""){
+        if(value == reverse  ){
+          alert('yes it is palindrome')
+        }else{
+          alert('not palindrome')
+        }  
+      }
+
+
+      input.value="";
+    }
+  </script>
+</body>
+</html>

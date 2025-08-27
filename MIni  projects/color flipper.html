@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>color flipper</title>
+  <style>
+    button{
+      padding: 1rem;
+      font-weight: bolder;
+      color: white;
+      border-radius: 1rem;
+      border:0.15rem solid rgb(179, 179, 179);
+    }
+    .button-green{
+      background-color: green;
+    }
+    .button-red{
+      background-color: red;
+    }
+    .button-blue{
+      background-color: blue;
+    }
+    .button-random{
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Flipper</h1>
+  <button onclick="bgColors('green')" class="button-green">Green</button>
+  <button onclick="bgColors('red')" class="button-red">Red</button>
+  <button onclick="bgColors('blue')" class="button-blue">Blue</button>
+  <button onclick="randomcolors()" class="button-random">Random</button>
+
+  <script>
+    const body = document.querySelector("body")
+    function bgColors(putcolor){
+      body.style.backgroundColor = putcolor;
+    }
+
+    function randomcolors(){
+     const red = Math.round(Math.random()* 255)
+     const green = Math.round(Math.random()* 255)
+     const blue = Math.round(Math.random()* 255)
+
+      body.style.backgroundColor = `rgb(${red} , ${green} , ${blue})` 
+    }
+  </script>
+</body>
+</html>
