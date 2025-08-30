@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stop watch</title>
+</head>
+<body>
+  <h3>Stop Watch</h3>
+  <h1 id="time">00:00</h1>
+  <button onclick="StartClock()">Start</button>
+  <button onclick="StopClock()">Stop</button>
+  <button onclick="ResetClock()">Reset</button>
+
+  <script>
+    let secondsElapsed = 0;
+    let interval = null;
+    const time = document.getElementById("time")
+
+    function setTime (){
+      time.innerHTML = secondsElapsed;
+    }
+
+    function timer(){
+      secondsElapsed++;
+      setTime()
+    }
+    function StartClock() {
+      interval = setInterval(timer,1000)
+    }
+
+    function StopClock() {}
+
+    function ResetClock() {}
+  </script>
+</body>
+</html>

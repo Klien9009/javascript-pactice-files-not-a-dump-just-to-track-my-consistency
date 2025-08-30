@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
   <title>todo List03</title>
+  <style>
+    .todo-grid,
+    .todo-input-grid{
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+    .todo-input-grid{
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
+
   <p>Todo List</p>
-  <input class="js-input" placeholder="Todo name">
-  <input type="date"  class="js-due-date-input">
-  <button onclick="AddTodo()">Add</button>
-  <div class="js-todo-list">text</div>
+
+  <div class="todo-input-grid">
+    <input class="js-input" placeholder="Todo name">
+    <input type="date"  class="js-due-date-input">
+    <button onclick="AddTodo()">Add</button>   
+  </div>
+
+  <div class="js-todo-list todo-grid">text</div>
 
   <script src="03.js"></script>
   

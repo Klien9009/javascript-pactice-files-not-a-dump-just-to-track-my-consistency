@@ -57,7 +57,7 @@
       console.log(value);
     }
  */
-
+/*
  const nums = [1,1,3]; 
  let total = 0;// Acumulator pattern
  for(let i = 0; i< nums.length; i++) {
@@ -75,9 +75,56 @@
   numsDoubled.push(num*2);
  }
  console.log(numsDoubled);
-
+*/
  
+const array1 = [1,2,3];
+const array2 = array1.slice();// Slice make a copy of that array
+array2.push(4);
+console.log(array1);
+console.log(array2);
+//destructuring
+const [firstValue, secondValue] = [1,2,3];//first will save in firstValue and second will save in secondValue.
 
+for (let i=1; i <= 10; i++){
+  if (i % 3 === 0){ // i divedible by 3 and the remainder should be 0.
+    continue;//continue let us skip one iteration of the loop like here you skip the 3 
+  }
+  console.log(i);
+  if(i === 8){
+    break;//break let us stop early in loop just like here it will stop at 8 and wont count to 10.
+  }
+}
+
+//trying with while loop
+let i = 1;
+
+while(i <=10){
+  if (i % 3 === 0){
+    i++;
+    continue;
+  }
+  console.log(i)
+  i++;
+}
+
+
+// how to use loops with function
+function doubleArrays(nums){
+
+ const numsDoubled = [];
+
+ for (let i = 0; i<nums.length; i++) {
+  const num = nums[i];
+  if(num === 0){
+    return numsDoubled; //return is also the another way of break out of the loop.
+  }
+  numsDoubled.push(num*2);
+ }
+return numsDoubled;
+}
+
+console.log(doubleArrays([1,1,3]));
+console.log(doubleArrays([2,2,5,7, 8,0,5,4]));
   </script>
 </body>
 </html>

@@ -10,29 +10,28 @@
   <button onclick="playGame('paper');">Paper</button>
 
   <button onclick="playGame('scissors');">Scissors</button>
-  <p class="js-moves"></p>
-  <p class="js-result"></p>
-  <p  class="js-score"></p>
 
-  <button onclick="
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-  localStorage.removeItem('score');
-  updateScoreElements();
-  ">Reset score</button>
+  <button onclick="resetButton();">Reset score</button>
 
-  <button onclick="autoPlay()">Auto play</button>
+  <button class="auto-play-button">Auto play</button>
 
   <script>
+    function resetButton() {
+      score.losses = 0;
+      score.wins = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      alert('Score was reset.');
+    };
+
     let score = JSON.parse(localStorage.getItem('score')) || { //using default operator(||)
       wins: 0,
       losses:0,
       ties: 0
+      
     };
 
-    updateScoreElements();
-
+    
 /*
     if (!score) { //!score does the same thing as checking that its null.!score will flip it into null.
       score = {
@@ -42,23 +41,13 @@
       };
     }
 */
-let isAutoPlaying = false;
-let intervalId;
-console.log(!isAutoPlaying)
+
 function autoPlay(){
-  if(!isAutoPlaying){
-      intervalId = setInterval(function(){
-       const playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-    isAutoPlaying = true;
-  }else{
-    clearInterval(intervalId);
-    isAutoPlaying = false;
-  }
- }
-
-
+  setInterval(function(){
+    const playerMove = pickComputerMove();
+    playGame(playerMove);
+  },1000)
+}
 
     function playGame(playerMove){
       const computerMove = pickComputerMove();
@@ -105,28 +94,9 @@ function autoPlay(){
         console.log(`${result}`)
         console.log(JSON.stringify(score));
 
-        function updateResultElements(){
-          document.querySelector('.js-result')
-          .innerHTML = `${result}`;
-        }
-
-        function updateMoveElements(){
-          document.querySelector('.js-moves').innerHTML = `Your move : ${playerMove} , Computer move : ${computerMove}`;
-        }
-      updateMoveElements();
-      updateResultElements();
-      updateScoreElements();
-      
-
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+wins: ${score.wins}, losses: ${score.losses},Ties: ${score.ties} `);
     };
-
-
-    function updateScoreElements(){
-      document.querySelector('.js-score')
-        .innerHTML = `wins: ${score.wins}, losses: ${score.losses},Ties: ${score.ties}`;      
-    };
-
-
 
     function pickComputerMove (){
       const randomNumber = Math.random();
